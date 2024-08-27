@@ -25,11 +25,9 @@ public class LoginSteps {
     public void typeUser(String user){
         WebElement userInputElement = driver.findElement(LoginPage.userInput);
         userInputElement.sendKeys(user);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(444));
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPage.loginButton));
-
-
     }
 
     /**
